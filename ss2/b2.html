@@ -8,17 +8,11 @@
     <h2>Hệ thống Kiểm kê Thư viện</h2>
 
     <script>
-        // BƯỚC 1: Lấy dữ liệu số lượng sách từ người dùng
         let input = prompt("Mời bạn nhập số lượng sách hiện có trong thư viện:");
-
-        // BƯỚC 2: Chuyển đổi dữ liệu từ chuỗi (string) sang số nguyên (number)
         let bookCount = parseInt(input);
-
-        // BƯỚC 3: Kiểm tra tính hợp lệ của dữ liệu (Phòng trường hợp người dùng nhập chữ)
         if (isNaN(bookCount)) {
             alert("Vui lòng nhập một con số hợp lệ!");
         } else {
-            // BƯỚC 4: Sử dụng câu lệnh điều kiện để phân loại số lượng
             if (bookCount < 10) {
                 console.log("Thư viện có ít sách");
                 alert("Thư viện có ít sách");
@@ -28,7 +22,6 @@
                 alert("Thư viện có số lượng sách vừa đủ");
             } 
             else {
-                // Trường hợp bookCount > 20
                 console.log("Thư viện có nhiều sách");
                 alert("Thư viện có nhiều sách");
             }
