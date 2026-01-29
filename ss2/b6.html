@@ -8,17 +8,12 @@
     <h2>Thủ tục Mượn Sách Thư viện</h2>
 
     <script>
-        // BƯỚC 1: Lấy dữ liệu từ người dùng
         let bookName = prompt("Nhập tên sách:");
         let borrowerName = prompt("Nhập tên người mượn:");
         let status = prompt("Tình trạng sách (có sẵn / đã mượn / không có sẵn):").toLowerCase();
-        
-        // Hỏi thêm thông tin về thẻ thư viện (Dạng Yes/No)
         let hasCard = prompt("Bạn có thẻ thư viện không? (có / không):").toLowerCase() === "có";
         
         let borrowDays = parseInt(prompt("Nhập số ngày dự định mượn (nếu sách đã mượn, nhập số ngày hiện tại đã mượn):") || "0");
-
-        // BƯỚC 2: Xử lý logic điều kiện
         console.log(`Thông tin: Sách ${bookName} | Người mượn: ${borrowerName}`);
 
         if (status === "có sẵn") {
@@ -42,7 +37,6 @@
         else if (status === "không có sẵn") {
             alert("Sách này hiện tại không có sẵn trong thư viện, bạn có thể đăng ký mượn sau");
         } 
-        // BƯỚC 3: Xử lý thông tin không hợp lệ
         else {
             alert("Thông tin không hợp lệ, vui lòng nhập lại");
         }
