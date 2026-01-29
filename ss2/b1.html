@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý Sách - JavaScript</title>
+</head>
+<body>
+    <h2>Chương trình Quản lý Sách</h2>
+    <p>Kết quả kiểm tra sẽ hiển thị trong tab <b>Console</b> hoặc <b>Alert</b>.</p>
+
+    <script>
+        // BƯỚC 1: Khai báo biến và lấy dữ liệu từ người dùng thông qua prompt()
+        let bookName = prompt("Mời bạn nhập tên sách:");
+        let author = prompt("Mời bạn nhập tên tác giả:");
+        let publishYear = prompt("Mời bạn nhập năm xuất bản:");
+
+        // Chuyển kiểu dữ liệu của publishYear từ String sang Number để tính toán chính xác
+        publishYear = parseInt(publishYear);
+
+        // Lấy năm hiện tại từ hệ thống
+        let currentYear = new Date().getFullYear();
+
+        // BƯỚC 2: Sử dụng câu lệnh điều kiện để kiểm tra
+        console.log("--- Thông tin sách ---");
+        console.log("Tên sách: " + bookName);
+        console.log("Tác giả: " + author);
+
+        if (publishYear === currentYear) {
+            // Trường hợp 1: Năm xuất bản đúng bằng năm hiện tại
+            alert("Đây là sách mới!");
+            console.log("Tình trạng: Đây là sách mới!");
+        } 
+        else if (currentYear - publishYear <= 5 && currentYear - publishYear > 0) {
+            // Trường hợp 2: Xuất bản trong vòng 5 năm qua (ví dụ 2026 - 2021)
+            alert("Sách khá mới");
+            console.log("Tình trạng: Sách khá mới");
+        } 
+        else {
+            // Trường hợp 3: Các trường hợp còn lại
+            alert("Sách đã cũ");
+            console.log("Tình trạng: Sách đã cũ");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý Thể loại Sách</title>
+</head>
+<body>
+    <h2>Hệ thống Phân loại Sách Thư viện</h2>
+
+    <script>
+        // BƯỚC 1: Lấy dữ liệu từ người dùng
+        let bookName = prompt("Nhập tên sách:");
+        let category = prompt("Nhập thể loại (Khoa học, Lịch sử, Văn học, Truyện):");
+        let status = prompt("Tình trạng sách (có sẵn / đã mượn):");
+
+        // BƯỚC 2: Chuẩn hóa dữ liệu (Viết thường hết để so sánh chính xác)
+        category = category.toLowerCase();
+        status = status.toLowerCase();
+
+        // BƯỚC 3: Xử lý logic phân loại
+        console.log("Sách: " + bookName);
+
+        // Nhóm 1: Khoa học hoặc Lịch sử
+        if (category === "khoa học" || category === "lịch sử") {
+            
+            // Kiểm tra điều kiện lồng nhau (Nested If) về tình trạng
+            if (status === "có sẵn") {
+                alert("Sách này có sẵn trong thư viện");
+                console.log("Thông báo: Sách này có sẵn trong thư viện");
+            } else {
+                alert("Sách đã được mượn");
+                console.log("Thông báo: Sách đã được mượn");
+            }
+
+        } 
+        // Nhóm 2: Văn học hoặc Truyện
+        else if (category === "văn học" || category === "truyện") {
+            alert("Sách này có thể đọc giải trí");
+            console.log("Thông báo: Sách này có thể đọc giải trí");
+        } 
+        // Nhóm 3: Các thể loại khác
+        else {
+            alert("Thể loại sách không xác định");
+        }
+    </script>
+</body>
+</html>

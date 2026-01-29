@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý mức độ yêu thích sách</title>
+</head>
+<body>
+    <h2>Hệ thống Đánh giá Sách Thư viện</h2>
+
+    <script>
+        // BƯỚC 1: Lấy dữ liệu từ người dùng
+        let bookName = prompt("Nhập tên cuốn sách:");
+        let borrowerName = prompt("Nhập tên người mượn:");
+        let ratingInput = prompt("Nhập mức độ yêu thích (từ 1 đến 5):");
+
+        // BƯỚC 2: Chuyển đổi dữ liệu sang số nguyên
+        let rating = parseInt(ratingInput);
+
+        // BƯỚC 3: Kiểm tra logic và in thông báo
+        console.log("Người mượn: " + borrowerName);
+        console.log("Sách: " + bookName);
+
+        if (rating === 5 || rating === 4) {
+            // Nhóm yêu thích cao
+            alert("Đây là cuốn sách yêu thích của bạn, hãy đọc ngay!");
+            console.log("Phân loại: Yêu thích");
+        } 
+        else if (rating === 3) {
+            // Nhóm trung bình
+            alert("Sách này khá ổn, có thể mượn");
+            console.log("Phân loại: Bình thường");
+        } 
+        else if (rating === 2 || rating === 1) {
+            // Nhóm yêu thích thấp
+            alert("Sách này bạn có thể cân nhắc mượn lại sau");
+            console.log("Phân loại: Cân nhắc");
+        } 
+        else {
+            // Trường hợp nhập số ngoài khoảng 1-5 hoặc nhập chữ
+            alert("Mức độ yêu thích không hợp lệ. Vui lòng nhập từ 1 đến 5.");
+        }
+    </script>
+</body>
+</html>

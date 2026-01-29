@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý trạng thái và thời gian sách</title>
+</head>
+<body>
+    <h2>Hệ thống Kiểm kê Sách Nâng cao</h2>
+
+    <script>
+        // BƯỚC 1: Lấy dữ liệu từ người dùng
+        let bookName = prompt("Nhập tên sách:");
+        let status = prompt("Trạng thái (có sẵn / đã mượn):").toLowerCase();
+        let publishYear = parseInt(prompt("Nhập năm xuất bản:"));
+
+        // Tính số năm kể từ khi xuất bản đến nay
+        let currentYear = new Date().getFullYear();
+        let age = currentYear - publishYear;
+
+        // BƯỚC 2: Kiểm tra các điều kiện phức hợp
+        console.log("Sách: " + bookName + " - Xuất bản cách đây: " + age + " năm");
+
+        if (status === "có sẵn" && age <= 5) {
+            // Điều kiện 1: Có sẵn VÀ Mới (<= 5 năm)
+            alert("Sách này mới và có sẵn để mượn");
+        } 
+        else if (status === "đã mượn" && age <= 10) {
+            // Điều kiện 2: Đã mượn VÀ Khá mới (<= 10 năm)
+            alert("Sách này đã mượn nhưng khá mới, có thể mượn lại sau");
+        } 
+        else if (status === "đã mượn" && age > 10) {
+            // Điều kiện 3: Đã mượn VÀ Cũ (> 10 năm)
+            alert("Sách này đã mượn và khá cũ");
+        } 
+        else if (status === "có sẵn" && age > 5) {
+            // Điều kiện 4: Có sẵn VÀ Lâu năm (> 5 năm)
+            alert("Sách này có sẵn nhưng đã lâu năm");
+        } 
+        else {
+            alert("Thông tin nhập vào không hợp lệ hoặc trạng thái không xác định.");
+        }
+    </script>
+</body>
+</html>
